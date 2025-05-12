@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台灣景點介紹</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>台灣景點介紹</h1>
+        <nav>
+            <ul>
+                <li><a href="#front">首頁</a></li>
+                <li><a href="#attraction">景點介紹</a></li>
+                <li><a href="#travel">主題旅遊</a></li>
+                <li><a href="#history">歷史與人文</a></li>
+                <li><a href="#newsletter">聯絡我們</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="front" id="front">
+            <h2 style="text-align: center;">台灣之美</h2>
+            <p style="text-align: center;">台灣被譽為寶島，不僅擁有豐富的自然景觀，更以其多元的文化與美食吸引國內外旅客。
+                <br>以下為您精選幾個台灣必訪的特色景點，讓您暢遊台灣，留下難忘的回憶。
+            </p>
+        </section>
+
+        <section class="attraction" id="attraction">
+            <div>
+                <img src="images/taipei-taiwan-2057818_1280 (1).jpg" alt="台北101">
+                <h3>台北101</h3>
+                <p>台北101是台灣的地標建築，也是全球最著名的摩天大樓之一，擁有世界最高的觀景台。
+                    來到這裡，您可以俯瞰台北市區的壯麗景觀，並且參觀時尚的購物中心。</p>
+            </div>
+            <div>
+                <img src="images/IMG_8866.jpg" alt="日月潭">
+                <h3>日月潭</h3>
+                <p>日月潭位於南投縣，是台灣最具代表性的湖泊，以其美麗的自然景觀和深厚的文化底蘊而聞名。
+                    湖泊周圍環繞著山脈，擁有豐富的原住民文化，無論是划船、環湖騎行都是不容錯過的體驗。</p>
+            </div>
+            <div>
+                <img src="images/IMG_8867.jpg" alt="太魯閣國家公園">
+                <h3>太魯閣國家公園</h3>
+                <p>太魯閣國家公園位於花蓮縣，是台灣的著名國家公園之一，以其壯麗的峽谷和奇特的地形而聞名。
+                    太魯閣大峽谷被譽為世界級的美景，擁有豐富的自然生態與步道，是登山健行的理想場所。</p>
+            </div>
+
+        </section >
+
+        <section class="front-2" id="travel">
+            <div class="carousel">
+                <div class="carousel-images">
+                    <img src="images/IMG_8884.JPG" alt="海洋">
+                    <img src="images/IMG_9024.JPG" alt="夜市">
+                    <img src="images/IMG_9025.JPG" alt="古蹟">
+                </div>
+                <div class="carousel-buttons">
+                    <button id="prevBtn">&#10094;</button>
+                    <button id="nextBtn">&#10095;</button>
+                </div>
+            </div>
+        
+            <script>
+                const imagesContainer = document.querySelector('.carousel-images');
+                const images = document.querySelectorAll('.carousel-images img');
+                const prevBtn = document.getElementById('prevBtn');
+                const nextBtn = document.getElementById('nextBtn');
+        
+                let index = 0;
+        
+                function updateCarousel() {
+                    imagesContainer.style.transform = `translateX(-${index * 100}%)`;
+                }
+        
+                function nextImage() {
+                    index = (index + 1) % images.length;
+                    updateCarousel();
+                }
+        
+                function prevImage() {
+                    index = (index - 1 + images.length) % images.length;
+                    updateCarousel();
+                }
+        
+                prevBtn.addEventListener('click', prevImage);
+                nextBtn.addEventListener('click', nextImage);
+        
+                // Auto carousel
+                setInterval(nextImage, 3000); // Change image every 3 seconds
+            </script>
+        </section>
+
+        <section class="history" id="history">
+            <div>
+                <img src="images/tainan-1885450_1280.jpg" alt="安平古堡">
+                <h3>台南安平古堡</h3>
+                <p>平古堡位於台南市安平區，是台灣歷史上最悠久的城堡遺跡，見證了台灣自荷蘭殖民時期至今的重要歷史進程。作為貿易與軍事記錄點。
+                    漫步在古堡內，紅磚牆與城垛的遺跡訴說著古老的故事，中央高塔則提供了一覽安平港風景的壯麗視野。堡的文化價值與歷史意義。</p>
+            </div>
+            <div>
+                <img src="images/鹿港老街小巷07.jpg" alt="鹿港老街">
+                <h3>鹿港老街</h3>
+                <p>鹿港老街位於彰化縣鹿港鎮，是台灣保存最完整且富有歷史風情的老街之一。鹿港自清朝時期開始發展，因地理位置鄰近鹿港港口，曾是台灣重要的貿易與文化中心。
+                    鹿港老街見證了台灣經濟與文化的興衰，也是傳統建築和民俗風情的縮影。</p>
+            </div>
+            <div>
+                <img src="images/2788608123_7cf13cd1f3_b.jpg" alt="大溪老街">
+                <h3>大溪老街</h3>
+                <p>大溪老街位於桃園市大溪區，是台灣保存良好的傳統老街之一，以巴洛克風格建築聞名。
+                    大溪地區因清朝時期的經濟繁榮，以及日治時期的城鎮規劃，形成了今日獨特的歷史文化街區。這裡曾是重要的交通樞紐和木材集散地，見證了台灣早期的經濟發展與文化變遷。</p>
+            </div>
+        </section>
+
+        <section class="newsletter" id="newsletter">
+            <h3>感謝您對我們網站的關注！如果您有任何問題、建議或需要協助，<br>歡迎透過以下方式與我們聯絡，我們會盡快回覆您。</h3>
+            <p>電話：
+                如果您有緊急問題或需要立即協助，請撥打我們的客服熱線。<br>
+                📞 02-1234-5678<br>
+                電子郵件：
+                若您有一般問題、建議或合作事宜，歡迎發送電子郵件至以下地址：<br>
+                📧 booking@demojourney.com<br>           
+                </p>
+
+                <form>
+                    <input type="email" placeholder="請輸入您的Email" required>
+                    <button type="submit">送出</button>
+                </form>
+        </section>
+    </main>
+    <script>
+        document.querySelectorAll('nav a').forEach(anchor => {
+          anchor.addEventListener('click', function(e) {
+            e.preventDefault(); 
+            const targetId = this.getAttribute('href').substring(1); 
+            const targetElement = document.getElementById(targetId);
+    
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          });
+        });
+      </script>
+    
+    
+</body>
+
+</html>
